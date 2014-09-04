@@ -1,17 +1,59 @@
 # various high-level plots
 
-# last modified 2014-08-04 by J. Fox
+# last modified 2014-09-04 by J. Fox
 
-Hist <- function(x, scale=c("frequency", "percent", "density"), xlab=deparse(substitute(x)), 
-    ylab=scale, main="", ...){
+Hist <- function(x, groups, scale=c("frequency", "percent", "density"), xlab=deparse(substitute(x)), 
+    ylab=scale, main="", breaks="Sturges", ...){
     xlab # evaluate
-    x <- na.omit(x)
     scale <- match.arg(scale)
-    if (scale == "frequency") hist(x, xlab=xlab, ylab=ylab, main=main, ...)
-    else if (scale == "density") hist(x, freq=FALSE, xlab=xlab, ylab=ylab, main=main, ...)
+    ylab
+    if (!missing(groups)){
+        counts <- table(groups)
+        if (any(counts == 0)){
+            levels <- levels(groups)
+            warning("the following groups are empty: ", paste(levels[counts == 0], collapse=", "))
+        }
+        levels <- levels(groups)
+        hists <- lapply(levels, function(level) if (counts[level] != 0)  
+            hist(x[groups == level], plot=FALSE, breaks=breaks)
+            else list(breaks=NA))
+        range.x <- range(unlist(lapply(hists, function(hist) hist$breaks)), na.rm=TRUE)
+        n.breaks <- max(sapply(hists, function(hist) length(hist$breaks)))
+        breaks. <- seq(range.x[1], range.x[2], length=n.breaks)
+        hists <- lapply(levels, function(level) if (counts[level] != 0) 
+            hist(x[groups == level], plot=FALSE, breaks=breaks.)
+            else list(counts=0, density=0))
+        ylim <- if (scale == "frequency"){
+            max(sapply(hists, function(hist) max(hist$counts)))
+        }
+        else if (scale == "density"){
+            max(sapply(hists, function(hist) max(hist$density)))
+        }
+        else {
+            max.counts <- sapply(hists, function(hist) max(hist$counts))
+            tot.counts <- sapply(hists, function(hist) sum(hist$counts))
+            ylims <- tot.counts*(max(max.counts[tot.counts != 0]/tot.counts[tot.counts != 0]))
+            names(ylims) <- levels
+            ylims
+        }
+        save.par <- par(mfrow=n2mfrow(sum(counts != 0)), oma = c(0, 0, if (main != "") 1.5 else 0, 0))
+        on.exit(par(save.par))
+        for (level in levels){
+            if (counts[level] == 0) next
+            if (scale != "percent") Hist(x[groups == level], scale=scale, xlab=xlab, ylab=ylab, 
+                main=paste(deparse(substitute(groups)), "=", level), breaks=breaks., ylim=c(0, ylim), ...)
+            else Hist(x[groups == level], scale=scale, xlab=xlab, ylab=ylab, 
+                main=paste(deparse(substitute(groups)), "=", level), breaks=breaks., ylim=c(0, ylim[level]), ...)
+        }
+        if (main != "") mtext(side = 3, outer = TRUE, main, cex = 1.2)
+        return(invisible(NULL))
+    }
+    x <- na.omit(x)
+    if (scale == "frequency") hist(x, xlab=xlab, ylab=ylab, main=main, breaks=breaks, ...)
+    else if (scale == "density") hist(x, freq=FALSE, xlab=xlab, ylab=ylab, main=main, breaks=breaks, ...)
     else {
         n <- length(x)
-        hist(x, axes=FALSE, xlab=xlab, ylab=ylab, main=main, ...)
+        hist(x, axes=FALSE, xlab=xlab, ylab=ylab, main=main, breaks=breaks, ...)
         axis(1)
         max <- ceiling(10*par("usr")[4]/n)
         at <- if (max <= 3) (0:(2*max))/20
