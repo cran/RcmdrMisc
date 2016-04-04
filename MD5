@@ -1,7 +1,8 @@
-cf248f3683758988792abe4ad15b1aab *DESCRIPTION
-dd153e44ba11791e6baef8231426aa4c *NAMESPACE
-19b0729e12cfcfff161b791ba6691619 *NEWS
-fd81290fa02e3b1f0e81993907ee1c80 *R/Barplot.R
+518e0eb72df7622aa20ec7c0a74d6547 *DESCRIPTION
+983ea43544fa2bb2278201336d497fd8 *NAMESPACE
+6a4c9acfabd1b8e4200f509f81cec26e *NEWS
+31215cfa2789fa045326c38282e8a524 *R/Barplot.R
+48753b13861d21464d47f0de6893acc4 *R/DeltaMethod.R
 63eb64573825683cee20f5a7848eab39 *R/Dotplot.R
 a0408318e2aa9bb4ddf037be7b66255c *R/Percents.R
 bbfd6fa51d82e168a23c6307b1ea6c13 *R/bin.var.R
@@ -15,7 +16,8 @@ c6fe3e403873c35c39a7f014c7dc0bd8 *R/partial.cor.R
 6324990e38f450311b9a0124f0ab4597 *R/reliability.R
 8bed27ded7fbb5e2d93a0416384dbc7f *R/stepwise.R
 6381f87fd82dfdfb2a549338752eee3b *R/summarySandwich.R
-17a140da0c328c4b956af8910177658f *man/Barplot.Rd
+ea1e9366ff1a49bfcd9a3f141bf4dfe7 *man/Barplot.Rd
+d47903f4491e789d7324e1ff19c5ff02 *man/DeltaMethod.Rd
 de563bce92b5336e0975d893d0beaa15 *man/Dotplot.Rd
 edb3109ea83354e7eff2145c9609eeeb *man/Hist.Rd
 751abef96e6a32d368beed566f3b23b5 *man/KMeans.Rd

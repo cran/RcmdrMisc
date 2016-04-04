@@ -1,6 +1,6 @@
 Package: RcmdrMisc
-Version: 1.0-3
-Date: 2015-07-13
+Version: 1.0-4
+Date: 2016-04-01
 Title: R Commander Miscellaneous Functions
 Authors@R: c(person("John", "Fox", role = c("aut", "cre"), email = "jfox@mcmaster.ca"),
     person("Robert", "Muenchen", role = "ctb"),
@@ -14,11 +14,14 @@ Description:
   Various statistical, graphics, and data-management functions used by the Rcmdr package in the R Commander GUI for R. 
 License: GPL (>= 2)
 URL: http://www.r-project.org, http://socserv.socsci.mcmaster.ca/jfox/
-NeedsCompilation: no
-Packaged: 2015-08-04 13:58:24 UTC; User
 Author: John Fox [aut, cre],
   Robert Muenchen [ctb],
   Dan Putler [ctb]
 Maintainer: John Fox <jfox@mcmaster.ca>
 Repository: CRAN
-Date/Publication: 2015-08-04 18:23:40
+Repository/R-Forge/Project: rcmdr
+Repository/R-Forge/Revision: 709
+Repository/R-Forge/DateTimeStamp: 2016-04-01 19:20:44
+Date/Publication: 2016-04-04 08:36:53
+NeedsCompilation: no
+Packaged: 2016-04-01 19:25:18 UTC; rforge
