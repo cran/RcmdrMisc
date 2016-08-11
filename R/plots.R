@@ -1,6 +1,6 @@
 # various high-level plots
 
-# last modified 2014-09-04 by J. Fox
+# last modified 2016-07-12 by J. Fox
 
 Hist <- function(x, groups, scale=c("frequency", "percent", "density"), xlab=deparse(substitute(x)), 
     ylab=scale, main="", breaks="Sturges", ...){
@@ -98,39 +98,67 @@ lineplot <- function(x, ..., legend){
     return(invisible(NULL))
 }
 
-plotDistr <- function(x, p, discrete=FALSE, cdf=FALSE, ...){
-    if (discrete){
-        if (cdf){
-            plot(x, p, ..., type="n")
-            abline(h=0:1, col="gray")
-            lines(x, p, ..., type="s")
-        }
-        else {
-            plot(x, p, ..., type="h")
-            points(x, p, pch=16)
-            abline(h=0, col="gray")
-        }
+plotDistr <- function(x, p, discrete=FALSE, cdf=FALSE, regions=NULL, col="gray", 
+                      legend=TRUE, legend.pos="topright", ...){
+  if (discrete){
+    if (cdf){
+      plot(x, p, ..., type="n")
+      abline(h=0:1, col="gray")
+      lines(x, p, ..., type="s")
+    }
+    else {
+      plot(x, p, ..., type="h")
+      points(x, p, pch=16)
+      abline(h=0, col="gray")
+    }
+  }
+  else{
+    if (cdf){
+      plot(x, p, ..., type="n")
+      abline(h=0:1, col="gray")
+      lines(x, p, ..., type="l")
     }
     else{
-        if (cdf){
-            plot(x, p, ..., type="n")
-            abline(h=0:1, col="gray")
-            lines(x, p, ..., type="l")
-        }
-        else{
-            plot(x, p, ..., type="n")
-            abline(h=0, col="gray")
-            lines(x, p, ..., type="l")
-        }
+      plot(x, p, ..., type="n")
+      abline(h=0, col="gray")
+      lines(x, p, ..., type="l")
     }
-    return(invisible(NULL))
+    if (!is.null(regions)){
+      col <- rep(col, length=length(regions))
+      for (i in 1:length(regions)){
+        region <- regions[[i]]
+        which.xs <- (x >= region[1] & x <= region[2])
+        xs <- x[which.xs]
+        ps <- p[which.xs]
+        xs <- c(xs[1], xs, xs[length(xs)])
+        ps <- c(0, ps, 0)
+        polygon(xs, ps, col=col[i])
+      }
+      if (legend){
+        if (length(unique(col)) > 1){
+          legend(legend.pos, title = if (length(regions) > 1) "Regions" else "Region", 
+                 legend=sapply(regions, function(region){ 
+                   paste(round(region[1], 2), "to", round(region[2], 2))
+                 }),
+                 col=col, pch=15, pt.cex=2.5, inset=0.02)
+        }
+        else
+        {
+          legend(legend.pos, title = if (length(regions) > 1) "Regions" else "Region", 
+                 legend=sapply(regions, function(region){ 
+                   paste(round(region[1], 2), "to", round(region[2], 2))
+                 }), inset=0.02)
+        }
+      }
+    }
+  }
+  return(invisible(NULL))
 }
-
 
 plotMeans <- function(response, factor1, factor2, error.bars = c("se", "sd", "conf.int", "none"),
     level=0.95, xlab=deparse(substitute(factor1)), ylab=paste("mean of", deparse(substitute(response))),
     legend.lab=deparse(substitute(factor2)), main="Plot of Means",
-    pch=1:n.levs.2, lty=1:n.levs.2, col=palette(), ...){
+    pch=1:n.levs.2, lty=1:n.levs.2, col=palette(), connect=TRUE, ...){
     if (!is.numeric(response)) stop("Argument response must be numeric.")
     xlab # force evaluation
     ylab
@@ -151,7 +179,7 @@ plotMeans <- function(response, factor1, factor2, error.bars = c("se", "sd", "co
         levs <- levels(factor1)
         n.levs <- length(levs)
         plot(c(1, n.levs), yrange, type="n", xlab=xlab, ylab=ylab, axes=FALSE, main=main, ...)
-        points(1:n.levs, means, type="b", pch=16, cex=2)
+        points(1:n.levs, means, type=if (connect) "b" else "p", pch=16, cex=2)
         box()
         axis(2)
         axis(1, at=1:n.levs, labels=levs)
@@ -184,7 +212,7 @@ plotMeans <- function(response, factor1, factor2, error.bars = c("se", "sd", "co
         axis(2)
         axis(1, at=1:n.levs.1, labels=levs.1)
         for (i in 1:n.levs.2){
-            points(1:n.levs.1, means[, i], type="b", pch=pch[i], cex=2, col=col[i], lty=lty[i])
+            points(1:n.levs.1, means[, i], type=if (connect) "b" else "p", pch=pch[i], cex=2, col=col[i], lty=lty[i])
             if (error.bars != "none") arrows(1:n.levs.1, means[, i] - sds[, i],
                 1:n.levs.1, means[, i] + sds[, i], angle=90, code=3, col=col[i], lty=lty[i], length=0.125)
         }
