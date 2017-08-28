@@ -1,6 +1,6 @@
 # various high-level plots
 
-# last modified 2016-07-12 by J. Fox
+# last modified 2017-04-04 by J. Fox
 
 Hist <- function(x, groups, scale=c("frequency", "percent", "density"), xlab=deparse(substitute(x)), 
     ylab=scale, main="", breaks="Sturges", ...){
@@ -23,6 +23,7 @@ Hist <- function(x, groups, scale=c("frequency", "percent", "density"), xlab=dep
         hists <- lapply(levels, function(level) if (counts[level] != 0) 
             hist(x[groups == level], plot=FALSE, breaks=breaks.)
             else list(counts=0, density=0))
+        names(hists) <- levels
         ylim <- if (scale == "frequency"){
             max(sapply(hists, function(hist) max(hist$counts)))
         }
@@ -46,14 +47,18 @@ Hist <- function(x, groups, scale=c("frequency", "percent", "density"), xlab=dep
                 main=paste(deparse(substitute(groups)), "=", level), breaks=breaks., ylim=c(0, ylim[level]), ...)
         }
         if (main != "") mtext(side = 3, outer = TRUE, main, cex = 1.2)
-        return(invisible(NULL))
+        return(invisible(hists))
     }
     x <- na.omit(x)
-    if (scale == "frequency") hist(x, xlab=xlab, ylab=ylab, main=main, breaks=breaks, ...)
-    else if (scale == "density") hist(x, freq=FALSE, xlab=xlab, ylab=ylab, main=main, breaks=breaks, ...)
+    if (scale == "frequency") {
+        hist <- hist(x, xlab=xlab, ylab=ylab, main=main, breaks=breaks, ...)
+    }
+    else if (scale == "density") {
+        hist <- hist(x, freq=FALSE, xlab=xlab, ylab=ylab, main=main, breaks=breaks, ...)
+    }
     else {
         n <- length(x)
-        hist(x, axes=FALSE, xlab=xlab, ylab=ylab, main=main, breaks=breaks, ...)
+        hist <- hist(x, axes=FALSE, xlab=xlab, ylab=ylab, main=main, breaks=breaks, ...)
         axis(1)
         max <- ceiling(10*par("usr")[4]/n)
         at <- if (max <= 3) (0:(2*max))/20
@@ -62,10 +67,32 @@ Hist <- function(x, groups, scale=c("frequency", "percent", "density"), xlab=dep
     }
     box()
     abline(h=0)
-    invisible(NULL)
+    invisible(hist)
 }
 
 indexplot <- function(x, labels=seq_along(x), id.method="y", type="h", id.n=0, ylab, ...){
+    if (is.data.frame(x)) {
+        if (missing(labels)) labels <- rownames(x)
+        x <- as.matrix(x)
+    }
+    if (is.matrix(x)){
+        ids <- NULL
+        mfrow <- par(mfrow=c(ncol(x), 1))
+        on.exit(par(mfrow)) 
+        if (missing(labels)) labels <- 1:nrow(x)
+        if (is.null(colnames(x))) colnames(x) <- paste0("Var", 1:ncol(x))
+        for (i in 1:ncol(x)) {
+            id <- indexplot(x[, i], labels=labels, id.method=id.method, type=type, id.n=id.n,
+                            ylab=if (missing(ylab)) colnames(x)[i] else ylab, ...)
+            ids <- union(ids, id)
+        }
+        if (is.null(ids) || any(is.na(x))) return(invisible(NULL)) else {
+            ids <- sort(ids)
+            names(ids) <- labels[ids]
+            if (all(ids == names(ids))) names(ids) <- NULL
+            return(ids)
+        }
+    }
     if (missing(ylab)) ylab <- deparse(substitute(x))
     plot(x, type=type, ylab=ylab, xlab="Observation Index", ...)
     if (par("usr")[3] <= 0) abline(h=0, col='gray')
@@ -156,13 +183,16 @@ plotDistr <- function(x, p, discrete=FALSE, cdf=FALSE, regions=NULL, col="gray",
 }
 
 plotMeans <- function(response, factor1, factor2, error.bars = c("se", "sd", "conf.int", "none"),
-    level=0.95, xlab=deparse(substitute(factor1)), ylab=paste("mean of", deparse(substitute(response))),
-    legend.lab=deparse(substitute(factor2)), main="Plot of Means",
-    pch=1:n.levs.2, lty=1:n.levs.2, col=palette(), connect=TRUE, ...){
+                      level=0.95, xlab=deparse(substitute(factor1)), ylab=paste("mean of", deparse(substitute(response))),
+                      legend.lab=deparse(substitute(factor2)), 
+                      legend.pos=c("farright", "bottomright", "bottom", "bottomleft", "left", "topleft", "top", "topright", "right", "center"),
+                      main="Plot of Means",
+                      pch=1:n.levs.2, lty=1:n.levs.2, col=palette(), connect=TRUE, ...){
     if (!is.numeric(response)) stop("Argument response must be numeric.")
     xlab # force evaluation
     ylab
     legend.lab
+    legend.pos <- match.arg(legend.pos)
     error.bars <- match.arg(error.bars)
     if (missing(factor2)){
         if (!is.factor(factor1)) stop("Argument factor1 must be a factor.")
@@ -184,7 +214,7 @@ plotMeans <- function(response, factor1, factor2, error.bars = c("se", "sd", "co
         axis(2)
         axis(1, at=1:n.levs, labels=levs)
         if (error.bars != "none") arrows(1:n.levs, means - sds, 1:n.levs, means + sds,
-            angle=90, lty=2, code=3, length=0.125)
+                                         angle=90, lty=2, code=3, length=0.125)
     }
     else {
         if (!(is.factor(factor1) | is.factor(factor2))) stop("Arguments factor1 and factor2 must be factors.")
@@ -206,20 +236,24 @@ plotMeans <- function(response, factor1, factor2, error.bars = c("se", "sd", "co
         if (length(pch) == 1) pch <- rep(pch, n.levs.2)
         if (length(col) == 1) col <- rep(col, n.levs.2)
         if (length(lty) == 1) lty <- rep(lty, n.levs.2)
+        expand.x.range <- if (legend.pos == "farright") 1.4 else 1
         if (n.levs.2 > length(col)) stop(sprintf("Number of groups for factor2, %d, exceeds number of distinct colours, %d."), n.levs.2, length(col))		
-        plot(c(1, n.levs.1 * 1.4), yrange, type="n", xlab=xlab, ylab=ylab, axes=FALSE, main=main, ...)
+        plot(c(1, n.levs.1 * expand.x.range), yrange, type="n", xlab=xlab, ylab=ylab, axes=FALSE, main=main, ...)
         box()
         axis(2)
         axis(1, at=1:n.levs.1, labels=levs.1)
         for (i in 1:n.levs.2){
             points(1:n.levs.1, means[, i], type=if (connect) "b" else "p", pch=pch[i], cex=2, col=col[i], lty=lty[i])
             if (error.bars != "none") arrows(1:n.levs.1, means[, i] - sds[, i],
-                1:n.levs.1, means[, i] + sds[, i], angle=90, code=3, col=col[i], lty=lty[i], length=0.125)
+                                             1:n.levs.1, means[, i] + sds[, i], angle=90, code=3, col=col[i], lty=lty[i], length=0.125)
         }
-        x.posn <- n.levs.1 * 1.1
-        y.posn <- sum(c(0.1, 0.9) * par("usr")[c(3,4)])
-        text(x.posn, y.posn, legend.lab, adj=c(0, -.5))
-        legend(x.posn, y.posn, levs.2, pch=pch, col=col, lty=lty)
+        if (legend.pos == "farright"){
+            x.posn <- n.levs.1 * 1.1
+            y.posn <- sum(c(0.1, 0.9) * par("usr")[c(3,4)])
+            #            text(x.posn, y.posn, legend.lab, adj=c(0, -.5))
+            legend(x.posn, y.posn, levs.2, pch=pch, col=col, lty=lty, title=legend.lab)
+        }
+        else legend(legend.pos, levs.2, pch=pch, col=col, lty=lty, title=legend.lab, inset=0.02)
     }
     invisible(NULL)
 }

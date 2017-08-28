@@ -1,3 +1,31 @@
+Changes to Version 1.0-6
+
+  o Added readSAS() for SAS b7dat files.
+  
+  o Added readStata() for improved input of Stata .dta files.
+  
+  o Added readSPSS() for reading SPSS .sav and .por files.
+  
+  o Improvements to plotMeans() legends.
+  
+  o Barplot() can now compute conditional percentages (suggestion of Beatriz Lacruz); other improvements.
+  
+  o Hist() now invisibly returns a "hist" object or list of "hist" objects (suggestion of Beatriz Lacruz).
+  
+  o renamed bin.var() as binVariable(), retaining bin.var() as a synomym.
+  
+  o Added discretePlot() for plotting distributions of discrete numeric variables (after a suggestion of Beatriz Lacruz).
+  
+  o Added plotBoot() for plotting bootstrap distributions.
+  
+  o indexplot() can now plot multiple variables (suggestion of Manuel Munoz).
+  
+  o Added binnedCounts() for binned frequency distribution of a numeric variable (suggestion of Manuel Munoz).
+  
+  o Added normalityTests() for various tests of normality.
+  
+  o Small bug fixes.
+
 Changes to Version 1.0-5
 
   o Added connect argument to plotMeans() (suggestion of Graham Smith).
