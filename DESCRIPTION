@@ -1,14 +1,14 @@
 Package: RcmdrMisc
-Version: 1.0-6
-Date: 2017-08-19
+Version: 1.0-7
+Date: 2017-12-29
 Title: R Commander Miscellaneous Functions
 Authors@R: c(person("John", "Fox", role = c("aut", "cre"), email = "jfox@mcmaster.ca"),
     person("Robert", "Muenchen", role = "ctb"),
     person("Dan", "Putler", role = "ctb")
    )
 Depends: R (>= 3.0.0), utils, car, sandwich
-Imports: abind, colorspace, Hmisc, MASS, e1071, foreign, haven,
-        readstata13, readxl, graphics, grDevices, stats, nortest
+Imports: abind, colorspace, Hmisc (>= 4.1-0), MASS, e1071, foreign,
+        haven, readstata13, readxl, graphics, grDevices, stats, nortest
 Suggests: boot, datasets
 ByteCompile: yes
 Description: 
@@ -21,8 +21,8 @@ Author: John Fox [aut, cre],
 Maintainer: John Fox <jfox@mcmaster.ca>
 Repository: CRAN
 Repository/R-Forge/Project: rcmdr
-Repository/R-Forge/Revision: 836
-Repository/R-Forge/DateTimeStamp: 2017-08-19 15:13:32
-Date/Publication: 2017-08-28 10:46:23 UTC
+Repository/R-Forge/Revision: 854
+Repository/R-Forge/DateTimeStamp: 2017-12-29 16:59:17
+Date/Publication: 2018-01-03 16:40:25 UTC
 NeedsCompilation: no
-Packaged: 2017-08-19 15:25:08 UTC; rforge
+Packaged: 2017-12-29 17:05:13 UTC; rforge

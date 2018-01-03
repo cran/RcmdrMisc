@@ -1,6 +1,6 @@
-e5cfe169839c985ca58aafde95dd7c53 *DESCRIPTION
-65bf90f1afce9bdb3af86dda509db5e2 *NAMESPACE
-df02010b99c13304e6ed3cd08793eb8b *NEWS
+2dab47f4429a75065e34a8fc109a90c7 *DESCRIPTION
+c2f8b733ab6011850790a0f9129c645f *NAMESPACE
+7faacfe960fa916aed653850e4b88cbb *NEWS
 178997358d1ba3cae7b36deee2947140 *R/Barplot.R
 48753b13861d21464d47f0de6893acc4 *R/DeltaMethod.R
 63eb64573825683cee20f5a7848eab39 *R/Dotplot.R
@@ -44,7 +44,7 @@ ae327bd098374e1c98ee28c9aeb3392f *man/partial.cor.Rd
 5d6296c4efb1317d7d72604d492a101f *man/plotBoot.Rd
 ae59e0c024cce9667a6badc91e0dcd72 *man/plotDistr.Rd
 efd66558be3d418d5e626ccf155a0eb7 *man/plotMeans.Rd
-d189401d75242865bff516beedfff5c6 *man/rcorr.adjust.Rd
+2087d8e2786837ca2a0064ba5f0b3c96 *man/rcorr.adjust.Rd
 1dd29363f55553e33386c9e4d70ebe0a *man/readSAS.Rd
 fb6410059fb64e9d7b4e24bdcff795bf *man/readSPSS.Rd
 c88cdcfb61b79a35e91540166c4775b0 *man/readStata.Rd
