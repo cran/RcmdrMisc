@@ -1,6 +1,6 @@
-2dab47f4429a75065e34a8fc109a90c7 *DESCRIPTION
+dff6270b9da68f903ddfa60022f84316 *DESCRIPTION
 c2f8b733ab6011850790a0f9129c645f *NAMESPACE
-7faacfe960fa916aed653850e4b88cbb *NEWS
+cc5543462375222cd0509f40ceb3b4bd *NEWS
 178997358d1ba3cae7b36deee2947140 *R/Barplot.R
 48753b13861d21464d47f0de6893acc4 *R/DeltaMethod.R
 63eb64573825683cee20f5a7848eab39 *R/Dotplot.R
@@ -18,7 +18,7 @@ c6fe3e403873c35c39a7f014c7dc0bd8 *R/partial.cor.R
 6659f846e98a16b0bca9ef54d6c36f7b *R/plots.R
 23cd6a3d3b767787f5e3ba8515bce73e *R/rcorr.adjust.R
 d5c727efa4e6d230bf8beab676f6dfd1 *R/readSAS.R
-c169a37e4874ed40a110bc731e1833b6 *R/readSPSS.R
+3d5342930ae9141161005d9091b0f0cc *R/readSPSS.R
 08531ad7ecde905c82bf21bf98d15f06 *R/readStata.R
 93cc36b5e2996a9b96e0e697391e9161 *R/readXL.R
 6324990e38f450311b9a0124f0ab4597 *R/reliability.R
@@ -46,7 +46,7 @@ ae59e0c024cce9667a6badc91e0dcd72 *man/plotDistr.Rd
 efd66558be3d418d5e626ccf155a0eb7 *man/plotMeans.Rd
 2087d8e2786837ca2a0064ba5f0b3c96 *man/rcorr.adjust.Rd
 1dd29363f55553e33386c9e4d70ebe0a *man/readSAS.Rd
-fb6410059fb64e9d7b4e24bdcff795bf *man/readSPSS.Rd
+e323a04d5991e7f1c4d7944acd063e98 *man/readSPSS.Rd
 c88cdcfb61b79a35e91540166c4775b0 *man/readStata.Rd
 e9f2bd29257e9bf465232c7a0b12a2b6 *man/readXL.Rd
 a31489ecbd5b326b00a681d8bca952a6 *man/reliability.Rd
