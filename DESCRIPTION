@@ -1,6 +1,6 @@
 Package: RcmdrMisc
-Version: 2.5-1
-Date: 2018-09-10
+Version: 2.7-0
+Date: 2019-12-24
 Title: R Commander Miscellaneous Functions
 Authors@R: c(person("John", "Fox", role = c("aut", "cre"), email = "jfox@mcmaster.ca"),
     person("Robert", "Muenchen", role = "ctb"),
@@ -21,8 +21,8 @@ Author: John Fox [aut, cre],
 Maintainer: John Fox <jfox@mcmaster.ca>
 Repository: CRAN
 Repository/R-Forge/Project: rcmdr
-Repository/R-Forge/Revision: 894
-Repository/R-Forge/DateTimeStamp: 2018-09-10 13:14:36
-Date/Publication: 2018-09-10 16:00:08 UTC
+Repository/R-Forge/Revision: 973
+Repository/R-Forge/DateTimeStamp: 2019-12-24 18:40:27
+Date/Publication: 2020-01-14 15:10:02 UTC
 NeedsCompilation: no
-Packaged: 2018-09-10 13:30:10 UTC; rforge
+Packaged: 2019-12-24 18:50:10 UTC; rforge
