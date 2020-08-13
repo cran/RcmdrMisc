@@ -1,3 +1,13 @@
+Changes to Version 2.7-1
+
+  o Added repeatedMeasuresPlot().
+  
+  o Added reshapeL2W() and reshapeW2L().
+  
+  o The stringsAsFactors argument to readSAS(), readSPSSS(), readStata(), and readXL() now defaults to FALSE.
+  
+  o Barplot(), discretePlot(), Dotplot(), Hist(), plotMeans() accommodate logical and character variables as grouping factor(s).
+
 Changes to Version 2.7-0
 
   o Added discreteCounts() and piechart() (after suggestions of Ethan Harris).
