@@ -1,7 +1,7 @@
-9b53b0c655bb4c9a03eb6952fb4b3b7a *DESCRIPTION
+04688be7031d7b407e1eeb6372c30930 *DESCRIPTION
 96dea976393051ef9ced17b8b1047c22 *NAMESPACE
-0d01cc8e79457a63b22195395d6849ad *NEWS
-3ed5f5a0240da28fc8ac411d84b0d217 *R/Barplot.R
+de440ca6addcf9d07f404741844282d1 *NEWS
+d6d0edb9f57b90c9eaa3fc833ca35c90 *R/Barplot.R
 55eb901e7f742cca1cf66007fe062662 *R/DeltaMethod.R
 1d36bfdbad57edf30ef23e55de75144a *R/Dotplot.R
 a0408318e2aa9bb4ddf037be7b66255c *R/Percents.R
@@ -9,11 +9,11 @@ a0408318e2aa9bb4ddf037be7b66255c *R/Percents.R
 db9615d58179706d7fae4eef95a72d81 *R/binnedCounts.R
 d5be12a5d8c6ef09c2c9d050e4865df5 *R/cluster.R
 d20f2171f5eff13b6b56e15efd0a833d *R/discreteCounts.R
-047f6fafe23d2a62dd8feda4caab24c0 *R/discretePlot.R
+06a6fd5ab3430b7800259d17fd0e1bcd *R/discretePlot.R
 24370787f8d1be12b6108ee59203d6a7 *R/gumbel.R
 f4515f68d69bace7fc85bf83c9068458 *R/mergeRows.R
 c8443d2e4e17f2d59f6b56ba2b5dac6c *R/normalityTest.R
-a7704e89c6bda160395c5fa74934f476 *R/numSummary.R
+6b7408ebbeaa025d090392497a435d35 *R/numSummary.R
 c6fe3e403873c35c39a7f014c7dc0bd8 *R/partial.cor.R
 a16bf4159ab9df1fd48120f85b80aac5 *R/piechart.R
 35467756e433ac70af9df0aafcddd6c4 *R/plotBoot.R
@@ -25,7 +25,7 @@ a16bf4159ab9df1fd48120f85b80aac5 *R/piechart.R
 487df8a5a66efc55460eb93a230fbf90 *R/readXL.R
 6324990e38f450311b9a0124f0ab4597 *R/reliability.R
 455745b34d0b1aa8d22b7ba2ec02c770 *R/repeatedMeasuresPlot.R
-1622f931511dbf307e017e173f89a0e1 *R/reshapeL2W.R
+f54aabd634664c48486cf8f82742609f *R/reshapeL2W.R
 93dc1470e2ea5ed67dff9854f2984f10 *R/reshapeW2L.R
 8bed27ded7fbb5e2d93a0416384dbc7f *R/stepwise.R
 6381f87fd82dfdfb2a549338752eee3b *R/summarySandwich.R
@@ -39,7 +39,7 @@ ee650f0c4d44b941e28a68d2032a8325 *man/bin.var.Rd
 e737eb4a84244b44aa812c0e6de8ff4e *man/binnedCounts.Rd
 459107b8e209f6f4a0bc5b47ac8360b6 *man/colPercents.Rd
 2792cae372a87fb6359f7133cb1b0aff *man/discreteCounts.Rd
-4e77a04bacad4a739786352deebea459 *man/discretePlot.Rd
+3e97e9e141405a68d674950b65d8bd27 *man/discretePlot.Rd
 c492694583b787cac2ee0d17783abb46 *man/gumbel.Rd
 39dd26e9572cf07bbf24e4f0fab630d6 *man/indexplot.Rd
 601ef286c343e596fe03cb5536e70739 *man/lineplot.Rd
@@ -58,7 +58,7 @@ efd66558be3d418d5e626ccf155a0eb7 *man/plotMeans.Rd
 3aef26800ead338c89dad9ca6934533d *man/readXL.Rd
 a31489ecbd5b326b00a681d8bca952a6 *man/reliability.Rd
 b380c9c0e39a71eb7e9596a81821225a *man/repeatedMeasuresPlot.Rd
-e0eac52d92d3804dc03f2cccc1d9dd44 *man/reshapeL2W.Rd
+070d3e36ceb0c7d4a2f77b3388ad7a6a *man/reshapeL2W.Rd
 e16aefda4bda94ab925b653d3392cc5a *man/reshapeW2L.Rd
 23590ec77218dca82b8c9470d89a188e *man/stepwise.Rd
 97eae6433570114ec3b6e85b3f14d067 *man/summarySandwich.Rd
