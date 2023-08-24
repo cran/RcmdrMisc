@@ -1,6 +1,6 @@
-04688be7031d7b407e1eeb6372c30930 *DESCRIPTION
-96dea976393051ef9ced17b8b1047c22 *NAMESPACE
-de440ca6addcf9d07f404741844282d1 *NEWS
+351ef64f001217e390bed2b36306ab5c *DESCRIPTION
+4a3acf0b6495bbdddd18e8d9ec58eba7 *NAMESPACE
+5d9db244e551dab9582674d862154785 *NEWS
 d6d0edb9f57b90c9eaa3fc833ca35c90 *R/Barplot.R
 55eb901e7f742cca1cf66007fe062662 *R/DeltaMethod.R
 1d36bfdbad57edf30ef23e55de75144a *R/Dotplot.R
@@ -13,7 +13,7 @@ d20f2171f5eff13b6b56e15efd0a833d *R/discreteCounts.R
 24370787f8d1be12b6108ee59203d6a7 *R/gumbel.R
 f4515f68d69bace7fc85bf83c9068458 *R/mergeRows.R
 c8443d2e4e17f2d59f6b56ba2b5dac6c *R/normalityTest.R
-6b7408ebbeaa025d090392497a435d35 *R/numSummary.R
+e4e79d38295f2461769424a2bf846662 *R/numSummary.R
 c6fe3e403873c35c39a7f014c7dc0bd8 *R/partial.cor.R
 a16bf4159ab9df1fd48120f85b80aac5 *R/piechart.R
 35467756e433ac70af9df0aafcddd6c4 *R/plotBoot.R
@@ -45,7 +45,7 @@ c492694583b787cac2ee0d17783abb46 *man/gumbel.Rd
 601ef286c343e596fe03cb5536e70739 *man/lineplot.Rd
 5ff34b1ee73e5bf6efa9931842c6367e *man/mergeRows.Rd
 7b0b1696b2c50291ea8ae05f5c384154 *man/normalityTest.Rd
-a89ca2623ab4ad585c41a5982349cba7 *man/numSummary.Rd
+9c0e68934b859918ce29a403ec6cba5a *man/numSummary.Rd
 ae327bd098374e1c98ee28c9aeb3392f *man/partial.cor.Rd
 5f63b17951c51e71c733c91825f3e7ca *man/piechart.Rd
 5d6296c4efb1317d7d72604d492a101f *man/plotBoot.Rd
