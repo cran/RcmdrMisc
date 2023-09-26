@@ -1,6 +1,6 @@
-351ef64f001217e390bed2b36306ab5c *DESCRIPTION
+39ae002dfb08e013096d29b13d544be9 *DESCRIPTION
 4a3acf0b6495bbdddd18e8d9ec58eba7 *NAMESPACE
-5d9db244e551dab9582674d862154785 *NEWS
+39c6b2945e10af2f7f3b3578a1b67ebd *NEWS
 d6d0edb9f57b90c9eaa3fc833ca35c90 *R/Barplot.R
 55eb901e7f742cca1cf66007fe062662 *R/DeltaMethod.R
 1d36bfdbad57edf30ef23e55de75144a *R/Dotplot.R
@@ -13,7 +13,7 @@ d20f2171f5eff13b6b56e15efd0a833d *R/discreteCounts.R
 24370787f8d1be12b6108ee59203d6a7 *R/gumbel.R
 f4515f68d69bace7fc85bf83c9068458 *R/mergeRows.R
 c8443d2e4e17f2d59f6b56ba2b5dac6c *R/normalityTest.R
-e4e79d38295f2461769424a2bf846662 *R/numSummary.R
+5b0db885ba2ccc1ce9490a9d42e523e8 *R/numSummary.R
 c6fe3e403873c35c39a7f014c7dc0bd8 *R/partial.cor.R
 a16bf4159ab9df1fd48120f85b80aac5 *R/piechart.R
 35467756e433ac70af9df0aafcddd6c4 *R/plotBoot.R
