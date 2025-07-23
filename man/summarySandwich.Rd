@@ -19,8 +19,8 @@ summarySandwich(model, ...)
 
 \arguments{
   \item{model}{a linear-model object.}
-  \item{type}{type of sandwich standard errors to be computed; see \code{\link{hccm}}
-    in the \pkg{car} package, and \code{\link{vcovHAC}} in the \pkg{sandwich} package, for details.}
+  \item{type}{type of sandwich standard errors to be computed; see \code{\link[car]{hccm}}
+    in the \pkg{car} package, and \code{\link[sandwich]{vcovHAC}} in the \pkg{sandwich} package, for details.}
   \item{...}{arguments to be passed to \code{hccm} or \code{vcovHAC}}
 }
 

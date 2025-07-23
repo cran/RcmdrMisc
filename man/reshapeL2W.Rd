@@ -6,7 +6,7 @@ Reshape Repeated-Measures Data from Long to Wide Format
 }
 
 \description{
-A simple front-end to the standard R \code{\link{reshape}} function. The data are assumed to be in "long" format, with several rows for each subject. 
+A simple front-end to the standard R \code{\link[stats]{reshape}} function. The data are assumed to be in "long" format, with several rows for each subject. 
 }
 
 \usage{
@@ -35,7 +35,7 @@ The data are reshaped so that there is one row per subject, with columns for the
 
 \author{John Fox \email{jfox@mcmaster.ca}}
 
-\seealso{\code{\link{reshape}}, \code{\link[carData]{OBrienKaiser}}, \code{\link[carData]{OBrienKaiserLong}}.}
+\seealso{\code{\link[stats]{reshape}}, \code{\link[carData]{OBrienKaiser}}, \code{\link[carData]{OBrienKaiserLong}}.}
 
 \examples{
 if (require(carData)){

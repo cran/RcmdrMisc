@@ -5,7 +5,7 @@ Read a SAS b7dat Data Set
 }
 \description{
 \code{readSAS} reads a SAS ``b7dat'' data set, stored in a file of type \code{.sas7bdat}, into an R data frame; it provides
-a front end to the \code{\link{read_sas}} function in the \pkg{haven} package.
+a front end to the \code{\link[haven]{read_sas}} function in the \pkg{haven} package.
 }
 
 \usage{
@@ -29,7 +29,7 @@ John Fox \email{jfox@mcmaster.ca}
 }
 
 \seealso{
-\code{\link{read_sas}}
+\code{\link[haven]{read_sas}}
 }
 
 \keyword{manip}

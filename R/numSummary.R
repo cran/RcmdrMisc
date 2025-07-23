@@ -2,6 +2,7 @@
 
 ## last modified by MMM    2023-03-20
 ## last modified by J. Fox 2023-09-25 
+## last modified by J. Fox 2025-03-31 
 
 CV <- function(x, na.rm=TRUE){
     x <- as.matrix(x)
@@ -18,7 +19,7 @@ CV <- function(x, na.rm=TRUE){
 }
 
 numSummary <- function(data, 
-                       statistics=c("mean", "sd", "se(mean)", "var", "CV", "IQR", "quantiles", "skewness", "kurtosis"),
+                       statistics=c("mean", "sd", "se(mean)", "var", "cv", "IQR", "quantiles", "skewness", "kurtosis"),
                        type=c("2", "1", "3"),
                        quantiles=c(0, .25, .5, .75, 1), groups){
     sd <- function(x, type, ...){
@@ -56,7 +57,7 @@ numSummary <- function(data,
     }
     variables <- names(data)
     if (missing(statistics)) statistics <- c("mean", "sd", "quantiles", "IQR")
-    statistics <- match.arg(statistics, c("mean", "sd", "se(mean)", "var", "CV", "IQR", "quantiles", "skewness", "kurtosis"),
+    statistics <- match.arg(statistics, c("mean", "sd", "se(mean)", "var", "cv", "IQR", "quantiles", "skewness", "kurtosis"),
                             several.ok=TRUE)
     type <- match.arg(type)
     type <- as.numeric(type)
@@ -68,7 +69,7 @@ numSummary <- function(data,
     }
     quants <- if (length(quantiles) >= 1) paste(100*quantiles, "%", sep="") else NULL
     nquants <- length(quants)
-    stats <- c(c("mean", "sd", "se(mean)", "var", "IQR", "CV", "skewness", "kurtosis")[c("mean", "sd", "se(mean)", "var", "IQR", "CV", "skewness", "kurtosis") %in% statistics], quants)
+    stats <- c(c("mean", "sd", "se(mean)", "var", "IQR", "cv", "skewness", "kurtosis")[c("mean", "sd", "se(mean)", "var", "IQR", "cv", "skewness", "kurtosis") %in% statistics], quants)
     nstats <- length(stats)
     nvars <- length(variables)
     result <- list()
@@ -109,7 +110,7 @@ numSummary <- function(data,
         if ("sd" %in% stats) table[,"sd"] <- sd(X)
         if ("se(mean)" %in% stats) table[, "se(mean)"] <- std.err.mean(X)
         if ("var" %in% stats) table[,"var"] <- var(X)
-        if ("CV" %in% stats) table[,"CV"] <- CV(X)
+        if ("cv" %in% stats) table[,"cv"] <- CV(X)
         if ("IQR" %in% stats) table[, "IQR"] <- IQR(X)
         if ("skewness" %in% statistics) table[, "skewness"] <- skewness(X, type=type)
         if ("kurtosis" %in% statistics) table[, "kurtosis"] <- kurtosis(X, type=type)
@@ -143,8 +144,8 @@ numSummary <- function(data,
             if ("IQR" %in% stats)
                 table[, "IQR", variable] <- tapply(data[, variable],
                                                    groups, IQR, na.rm=TRUE)
-            if ("CV" %in% stats)
-                table[, "CV", variable] <- tapply(data[, variable],
+            if ("cv" %in% stats)
+                table[, "cv", variable] <- tapply(data[, variable],
                                                   groups, CV, na.rm=TRUE)
             if ("skewness" %in% stats)
                 table[, "skewness", variable] <- tapply(data[, variable],

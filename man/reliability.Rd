@@ -36,7 +36,7 @@ reliability(S)
 
 \author{John Fox \email{jfox@mcmaster.ca}}
 
-\seealso{\code{\link{cov}}}
+\seealso{\code{\link[stats]{cov}}}
 
 \examples{
 if (require(car)){

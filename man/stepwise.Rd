@@ -7,7 +7,7 @@ Stepwise Model Selection
 }
 
 \description{
-This function is a front end to the \code{\link{stepAIC}} function in the
+This function is a front end to the \code{\link[MASS]{stepAIC}} function in the
 \pkg{MASS} package.
 }
 
@@ -44,7 +44,7 @@ The model selected by \code{stepAIC}.
 
 \author{John Fox \email{jfox@mcmaster.ca}}
 
-\seealso{\code{\link{stepAIC}}}
+\seealso{\code{\link[MASS]{stepAIC}}}
 
 \examples{
 # adapted from ?stepAIC in MASS

@@ -7,7 +7,7 @@ Read an Excel File
 }
 \description{
 \code{readXL} reads an Excel file, either of type \code{.xls} or \code{.xlsx} into an R data frame; it provides
-a front end to the \code{\link{read_excel}} function in the \pkg{readxl} package.
+a front end to the \code{\link[readxl]{read_excel}} function in the \pkg{readxl} package.
 \code{\link[readxl]{excel_sheets}} is re-exported from the \pkg{readxl} package and reports the
 names of spreadsheets in an Excel file.}
 
@@ -40,7 +40,7 @@ John Fox \email{jfox@mcmaster.ca}
 }
 
 \seealso{
-\code{\link{read_excel}}, \code{\link[readxl]{excel_sheets}}
+\code{\link[readxl]{read_excel}}, \code{\link[readxl]{excel_sheets}}
 }
 
 \keyword{manip}

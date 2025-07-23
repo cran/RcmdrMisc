@@ -8,8 +8,8 @@ Normality Tests
 }
 \description{
 Perform one of several tests of normality, either for a variable or for a variable by groups. The \code{normalityTest}
-function uses the \code{\link{shapiro.test}} function or one of several functions in the \pkg{nortest} package.
-If tests are done by groups, then adjusted p-values, computed by the Holm method, are also reported (see \code{\link{p.adjust}}).
+function uses the \code{\link[stats]{shapiro.test}} function or one of several functions in the \pkg{nortest} package.
+If tests are done by groups, then adjusted p-values, computed by the Holm method, are also reported (see \code{\link[stats]{p.adjust}}).
 }
 
 \usage{
@@ -33,7 +33,7 @@ normalityTest(x, ...)
   \item{vname}{optional name for the variable; if absent, taken from \code{x}.}
   \item{gname}{optional name for the grouping factor; if absent, taken from \code{groups}.}
   \item{\dots}{any arguments to be passed down; the only useful such arguments are for the 
-    \code{\link{pearson.test}} function in the \pkg{nortest} package.}
+    \code{\link[nortest]{pearson.test}} function in the \pkg{nortest} package.}
 }
 
 \value{
@@ -44,8 +44,8 @@ If testing by groups, the function invisibly returns \code{NULL}; otherwise it r
 \author{John Fox \email{jfox@mcmaster.ca}}
 
 
-\seealso{\code{\link{shapiro.test}}, \code{\link{ad.test}}, \code{\link{cvm.test}}, \code{\link{lillie.test}},
-  \code{\link{pearson.test}}, \code{\link{sf.test}}.}
+\seealso{\code{\link[stats]{shapiro.test}}, \code{\link[nortest]{ad.test}}, \code{\link[nortest]{cvm.test}}, \code{\link[nortest]{lillie.test}},
+  \code{\link[nortest]{pearson.test}}, \code{\link[nortest]{sf.test}}.}
 
 \examples{
   data(Prestige, package="car")

@@ -21,14 +21,14 @@ Hist(x, groups, scale=c("frequency", "percent", "density"), xlab=deparse(substit
   \item{xlab}{x-axis label, defaults to name of variable.}
   \item{ylab}{y-axis label, defaults to value of \code{scale}.}
   \item{main}{main title for graph, defaults to empty.}
-  \item{breaks}{see the \code{breaks} argument for \code{\link{hist}}.}
+  \item{breaks}{see the \code{breaks} argument for \code{\link[graphics]{hist}}.}
   \item{\dots}{arguments to be passed to \code{hist}.}
 }
 
 \value{
   This function is primarily called for its side effect ---
   plotting a histogram or histograms --- but it also invisibly 
-  returns an object of class \code{\link{hist}} or a list of \code{hist} objects.
+  returns an object of class \code{\link[graphics]{hist}} or a list of \code{hist} objects.
 }
 
 \author{John Fox \email{jfox@mcmaster.ca}}

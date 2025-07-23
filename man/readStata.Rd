@@ -5,7 +5,7 @@ Read a Stata Data Set
 }
 \description{
 \code{readStata} reads a Stata data set, stored in a file of type \code{.dta}, into an R data frame; it provides
-a front end to the \code{\link{read.dta13}} function in the \pkg{readstata13} package.
+a front end to the \code{\link[readstata13]{read.dta13}} function in the \pkg{readstata13} package.
 }
 
 \usage{
@@ -30,7 +30,7 @@ John Fox \email{jfox@mcmaster.ca}
 }
 
 \seealso{
-\code{\link{read.dta13}}
+\code{\link[readstata13]{read.dta13}}
 }
 
 \keyword{manip}

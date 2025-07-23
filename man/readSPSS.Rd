@@ -5,7 +5,7 @@ Read an SPSS Data Set
 }
 \description{
 \code{readSPSS} reads an SPSS data set, stored in a file of type \code{.sav} or \code{.por}, into an R data frame; it provides
-a front end to the \code{\link{read_spss}} function in the \pkg{haven} package and the \code{\link{read.spss}} function in the \pkg{foreign} package.
+a front end to the \code{\link[haven]{read_spss}} function in the \pkg{haven} package and the \code{\link[foreign]{read.spss}} function in the \pkg{foreign} package.
 }
 
 \usage{
@@ -25,8 +25,8 @@ readSPSS(file, rownames=FALSE, stringsAsFactors=FALSE,
     argument) with the value labels as their levels or values. As for \code{\link[foreign]{read.spss}}, 
     this is only done if there are at least as many labels as values of the variable 
     (and values without a matching label are returned as \code{NA}).}
-  \item{use.haven}{use \code{\link{read_spss}} from the \pkg{haven} package to read the file,
-    in preference to \code{\link{read.spss}} from the \pkg{foreign} package; the default is
+  \item{use.haven}{use \code{\link[haven]{read_spss}} from the \pkg{haven} package to read the file,
+    in preference to \code{\link[foreign]{read.spss}} from the \pkg{foreign} package; the default is
     \code{TRUE} for a \code{.sav} file and \code{FALSE} for a \code{.por} file.}
 }
 
@@ -39,7 +39,7 @@ John Fox \email{jfox@mcmaster.ca}
 }
 
 \seealso{
-\code{\link{read_spss}}, \code{\link{read.spss}}
+\code{\link[haven]{read_spss}}, \code{\link[foreign]{read.spss}}
 }
 
 \keyword{manip}

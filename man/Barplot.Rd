@@ -8,7 +8,7 @@ Bar Plots
 \description{
 Create bar plots for one or two factors scaled by frequency or precentages.
 In the case of two factors, the bars can be divided (stacked) or plotted in
-parallel (side-by-side). This function is a front end to \code{\link{barplot}}
+parallel (side-by-side). This function is a front end to \code{\link[graphics]{barplot}}
 in the \pkg{graphics} package.}
 
 \usage{
@@ -36,7 +36,7 @@ for two-factor plots, either \code{"divided"} (the default) or \code{"parallel"}
   \item{col}{
 if \code{by} is missing, the color for the bars, defaulting to \code{"gray"};
 otherwise colors for the levels of the \code{by} factor in two-factor plots, defaulting to colors
-provided by \code{\link{rainbow_hcl}} in the \pkg{colorspace} package.}
+provided by \code{\link[colorspace]{rainbow_hcl}} in the \pkg{colorspace} package.}
   \item{xlab}{
 an optional character string providing a label for the horizontal axis.}
   \item{legend.title}{
@@ -46,13 +46,13 @@ an optional character string providing a label for the vertical axis.}
   \item{main}{
 an optional main title for the plot.}
   \item{legend.pos}{
-position of the legend, in a form acceptable to the \code{\link{legend}}
+position of the legend, in a form acceptable to the \code{\link[graphics]{legend}}
 function; the default, \code{"above"}, puts the legend above the plot.}
   \item{label.bars}{
 if \code{TRUE} (the default is \code{FALSE}) show values of frequencies or percents in the bars.
   }
   \item{...}{
-arguments to be passed to the \code{\link{barplot}} function.}
+arguments to be passed to the \code{\link[graphics]{barplot}} function.}
 }
 
 \value{
@@ -64,7 +64,7 @@ John Fox \email{jfox@mcmaster.ca}
 }
 
 \seealso{
-\code{\link{barplot}}, \code{\link{legend}}, \code{\link{rainbow_hcl}}
+\code{\link[graphics]{barplot}}, \code{\link[graphics]{legend}}, \code{\link[colorspace]{rainbow_hcl}}
 }
 
 \examples{

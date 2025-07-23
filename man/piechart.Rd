@@ -5,7 +5,7 @@
 Draw a Piechart With Percents or Counts in the Labels
 }
 \description{
-\code{piechart} is a front-end to the standard R \code{\link{pie}} function, with the
+\code{piechart} is a front-end to the standard R \code{\link[graphics]{pie}} function, with the
 capability of adding percents or counts to the pie-segment labels.}
 \usage{
 piechart(x, scale = c("percent", "frequency", "none"), 
@@ -26,7 +26,7 @@ colors for the segments; the default is provided by the \code{\link[colorspace]{
 function in the \pkg{colorspace} package.
 }
   \item{\dots}{
-further arguments to be passed to \code{\link{pie}}.
+further arguments to be passed to \code{\link[graphics]{pie}}.
 }
 }
 
@@ -35,7 +35,7 @@ John Fox \email{jfox@mcmaster.ca}
 }
 
 \seealso{
-\code{\link{pie}}, \code{\link[colorspace]{rainbow_hcl}}
+\code{\link[graphics]{pie}}, \code{\link[colorspace]{rainbow_hcl}}
 }
 
 \examples{

@@ -23,7 +23,7 @@ repeatedMeasuresPlot(data, within, within.names, within.levels,
   \item{response.name}{optional quoted name for the response variable, defaults to \code{"score"}.}
   \item{trace}{optional quoted name of the (either within- or between-subjects) factor to define profiles of means in each panel of the graph; the default is the within-subjects factor with the smaller number of levels, if there are two, or not used if there is one.}
   \item{xvar}{optional quoted name of the factor to define the horizontal axis of each panel; the default is the within-subjects factor with the larger number of levels.}
-  \item{pch, lty}{vectors of symbol and line-type numbers to use for the profiles of means (i.e., levels of the \code{trace} factor); for the meaning of the defaults, see \code{\link{points}} and \code{\link{par}}.}
+  \item{pch, lty}{vectors of symbol and line-type numbers to use for the profiles of means (i.e., levels of the \code{trace} factor); for the meaning of the defaults, see \code{\link[graphics]{points}} and \code{\link[graphics]{par}}.}
   \item{col}{vector of colors for the profiles of means; the default is given by \code{palette()}, starting at the second color.}
   \item{plot.means}{if \code{TRUE} (the default), draw a plot of means by the factors.}
   \item{print.tables}{if \code{TRUE} (the default is \code{FALSE}), print tables of means

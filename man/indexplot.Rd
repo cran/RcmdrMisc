@@ -25,7 +25,7 @@ indexplot(x, groups, labels = seq_along(x), id.method = "y", type = "h",
   \item{id.n}{number of points to identify; see \code{\link[car]{showLabels}}.}
   \item{ylab}{label for vertical axis; if missing, will be constructed from \code{x}; for a data frame,
     defaults to the column names.}
-  \item{legend}{keyword (see \code{link}[grapics]{legend}) giving location of the legend if \code{groups} are specified; 
+  \item{legend}{(see \code{\link[graphics]{legend}}) giving location of the legend if \code{groups} are specified; 
     if \code{legend=FALSE}, the legend is suppressed.}
   \item{title}{title for the legend; may normally be omitted.}
   \item{col}{vector of colors for the \code{groups}.}
@@ -42,7 +42,7 @@ John Fox \email{jfox@mcmaster.ca}
 }
 
 \seealso{
-\code{\link[car]{showLabels}}, \code{\link{plot.default}}
+\code{\link[car]{showLabels}}, \code{\link[graphics]{plot.default}}
 }
 
 \examples{

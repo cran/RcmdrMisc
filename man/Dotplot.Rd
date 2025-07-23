@@ -19,7 +19,7 @@ Dotplot(x, by, bin = FALSE, breaks, xlim,
   \item{by}{optionally a factor (or character or logical variable) by which to classify \code{x}.}
   \item{bin}{if \code{TRUE} (the default is \code{FALSE}), the values of \code{x} are binned, 
     as in a histogram, prior to plotting.}
-  \item{breaks}{breaks for the bins, in a form acceptable to the \code{\link{hist}} function;
+  \item{breaks}{breaks for the bins, in a form acceptable to the \code{\link[graphics]{hist}} function;
     the default is \code{"Sturges"}.}
   \item{xlim}{optional 2-element numeric vector giving limits of the horizontal axis.}
   \item{xlab}{optional character string to label horizontal axis.}
@@ -41,7 +41,7 @@ John Fox \email{jfox@mcmaster.ca}
 }
 
 \seealso{
-\code{\link{hist}}
+\code{\link[graphics]{hist}}
 }
 
 \examples{

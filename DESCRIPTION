@@ -1,6 +1,6 @@
 Package: RcmdrMisc
-Version: 2.9-1
-Date: 2023-09-25
+Version: 2.9-2
+Date: 2025-07-31
 Title: R Commander Miscellaneous Functions
 Authors@R: c(person("John", "Fox", role = c("aut", "cre"), email = "jfox@mcmaster.ca"),
     person("Manuel", "Marquez", role = c("aut"), email = "manuel.munoz@uca.es"),
@@ -16,14 +16,14 @@ ByteCompile: yes
 Description: 
   Various statistical, graphics, and data-management functions used by the Rcmdr package in the R Commander GUI for R.  
 License: GPL (>= 2)
-URL: https://www.r-project.org,
-        https://socialsciences.mcmaster.ca/jfox/
+URL: https://cran.r-project.org/package=RcmdrMisc,
+        https://github.com/RCmdr-Project/rcmdrmisc
 NeedsCompilation: no
-Packaged: 2023-09-25 15:55:52 UTC; johnfox
+Packaged: 2025-07-23 17:32:59 UTC; johnfox
 Author: John Fox [aut, cre],
   Manuel Marquez [aut],
   Robert Muenchen [ctb],
   Dan Putler [ctb]
 Maintainer: John Fox <jfox@mcmaster.ca>
 Repository: CRAN
-Date/Publication: 2023-09-26 17:10:10 UTC
+Date/Publication: 2025-07-23 18:30:09 UTC

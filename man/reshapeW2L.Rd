@@ -42,7 +42,7 @@ a data frame in "long" format, with multiple rows for each subject (equal to the
 
 \author{John Fox \email{jfox@mcmaster.ca}}
 
-\seealso{\code{\link{reshapeL2W}}, \code{\link{reshape}}, \code{\link[carData]{OBrienKaiser}}, \code{\link[carData]{OBrienKaiserLong}}.}
+\seealso{\code{\link{reshapeL2W}}, \code{\link[stats]{reshape}}, \code{\link[carData]{OBrienKaiser}}, \code{\link[carData]{OBrienKaiserLong}}.}
 
 \examples{
 if (require(carData)){
